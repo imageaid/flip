@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 # ActiveSupport dependencies.
-%w{
+%w[
   concern
   inflector
   core_ext/hash/reverse_merge
   core_ext/object/blank
-}.each { |name| require "active_support/#{name}" }
+].each { |name| require "active_support/#{name}" }
 
 # Flip files.
-%w{
+%w[
   abstract_strategy
   cacheable
   controller_filters
@@ -19,9 +21,9 @@
   facade
   feature_set
   forbidden
-}.each { |name| require "flip/#{name}" }
+].each { |name| require "flip/#{name}" }
 
-require "flip/engine" if defined?(Rails)
+require 'flip/engine' if defined?(Rails)
 
 module Flip
   extend Facade

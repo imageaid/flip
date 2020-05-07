@@ -4,3 +4,5 @@ Gemfile.lock
 pkg/*
 .byebug_history
 .ruby-version
+.idea
+.rakeTasks

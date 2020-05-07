@@ -1,12 +1,12 @@
+# frozen_string_literal: true
+
 module Flip
   class FeaturesController < ApplicationController
-
     def index
       @p = FeaturesPresenter.new(FeatureSet.instance)
     end
 
     class FeaturesPresenter
-
       include Flip::Engine.routes.url_helpers
 
       def initialize(feature_set)
@@ -22,11 +22,11 @@ module Flip
       end
 
       def status(definition)
-        @feature_set.on?(definition.key) ? "on" : "off"
+        @feature_set.on?(definition.key) ? 'on' : 'off'
       end
 
       def default_status(definition)
-        @feature_set.default_for(definition) ? "on" : "off"
+        @feature_set.default_for(definition) ? 'on' : 'off'
       end
 
       def strategy_status(strategy, definition)
@@ -39,8 +39,6 @@ module Flip
           definition.key,
           strategy.name.underscore
       end
-
     end
-
   end
 end
